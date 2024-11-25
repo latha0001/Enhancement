@@ -32,7 +32,7 @@ This application allows users to upload, view, and manipulate DICOM images. It a
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/lathakadavath/image-manipulation-dicom-app.git
+    git clone https://github.com/latha0001/Enhancement
     ```
 2. Open the `index.html` file in your web browser.
 
