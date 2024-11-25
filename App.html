@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Manipulation and DICOM Handling App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <header class="mb-4">
+            <h1 class="text-3xl font-bold text-center">Image Manipulation and DICOM Handling App</h1>
+        </header>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Upload and View DICOM Images</h2>
+            <input type="file" id="dicomFileInput" class="mb-4 p-2 border border-gray-300 rounded" accept=".dcm">
+            <div id="dicomViewer" class="border border-gray-300 rounded p-4 bg-white">
+                <p class="text-gray-500">No DICOM file loaded.</p>
+            </div>
+            <div id="dicomMetadata" class="mt-4 p-4 bg-white border border-gray-300 rounded">
+                <h3 class="text-xl font-semibold mb-2">DICOM Metadata</h3>
+                <p class="text-gray-500">No metadata available.</p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Image Manipulation Tools</h2>
+            <div class="flex space-x-4 mb-4">
+                <button id="cropButton" class="p-2 bg-blue-500 text-white rounded">Crop</button>
+                <button id="zoomInButton" class="p-2 bg-blue-500 text-white rounded">Zoom In</button>
+                <button id="zoomOutButton" class="p-2 bg-blue-500 text-white rounded">Zoom Out</button>
+                <button id="panButton" class="p-2 bg-blue-500 text-white rounded">Pan</button>
+                <button id="brightnessButton" class="p-2 bg-blue-500 text-white rounded">Adjust Brightness</button>
+                <button id="contrastButton" class="p-2 bg-blue-500 text-white rounded">Adjust Contrast</button>
+                <button id="windowLevelButton" class="p-2 bg-blue-500 text-white rounded">Window/Level</button>
+            </div>
+            <div id="imageCanvasContainer" class="border border-gray-300 rounded p-4 bg-white">
+                <canvas id="imageCanvas" class="w-full h-96"></canvas>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Pixel Distance to Real-World Measurement</h2>
+            <div class="flex space-x-4 mb-4">
+                <input type="number" id="pixelDistance" class="p-2 border border-gray-300 rounded" placeholder="Pixel Distance">
+                <input type="number" id="pixelSpacing" class="p-2 border border-gray-300 rounded" placeholder="Pixel Spacing (mm)">
+                <button id="convertButton" class="p-2 bg-blue-500 text-white rounded">Convert</button>
+            </div>
+            <div id="conversionResult" class="p-4 bg-white border border-gray-300 rounded">
+                <p class="text-gray-500">Conversion result will be displayed here.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Placeholder for DICOM handling and image manipulation logic
+        document.getElementById('dicomFileInput').addEventListener('change', function(event) {
+            // Handle DICOM file upload and display
+        });
+
+        document.getElementById('cropButton').addEventListener('click', function() {
+            // Handle cropping
+        });
+
+        document.getElementById('zoomInButton').addEventListener('click', function() {
+            // Handle zoom in
+        });
+
+        document.getElementById('zoomOutButton').addEventListener('click', function() {
+            // Handle zoom out
+        });
+
+        document.getElementById('panButton').addEventListener('click', function() {
+            // Handle panning
+        });
+
+        document.getElementById('brightnessButton').addEventListener('click', function() {
+            // Handle brightness adjustment
+        });
+
+        document.getElementById('contrastButton').addEventListener('click', function() {
+            // Handle contrast adjustment
+        });
+
+        document.getElementById('windowLevelButton').addEventListener('click', function() {
+            // Handle window/level adjustment
+        });
+
+        document.getElementById('convertButton').addEventListener('click', function() {
+            const pixelDistance = parseFloat(document.getElementById('pixelDistance').value);
+            const pixelSpacing = parseFloat(document.getElementById('pixelSpacing').value);
+            if (!isNaN(pixelDistance) && !isNaN(pixelSpacing)) {
+                const realWorldDistance = pixelDistance * pixelSpacing;
+                document.getElementById('conversionResult').innerText = `Real-world distance: ${realWorldDistance.toFixed(2)} mm`;
+            } else {
+                document.getElementById('conversionResult').innerText = 'Please enter valid numbers for pixel distance and pixel spacing.';
+            }
+        });
+    </script>
+</body>
+</html>
